@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ─── 메인 스크롤 컨테이너 (JS가 스냅 제어) ─── */
+#scroll-root {
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+#scroll-root::-webkit-scrollbar {
+  display: none;
+}
+
+/* snap-section: JS 타겟 식별용 */
+.snap-section {}
+
+/* ─── Scroll reveal ─── */
+[data-reveal] { will-change: opacity, transform; }
+
+[data-reveal="fade-up"] {
+  opacity: 0;
+  transform: translateY(44px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal="fade-left"] {
+  opacity: 0;
+  transform: translateX(-44px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal="fade-right"] {
+  opacity: 0;
+  transform: translateX(44px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal="fade"] {
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Platform Section — 3D 회전 */
+@keyframes platformRotateOutRight {
+  from { transform: perspective(1000px) rotateY(0deg) translateX(0);    opacity: 1; }
+  to   { transform: perspective(1000px) rotateY(-90deg) translateX(-8%); opacity: 0; }
+}
+@keyframes platformRotateOutLeft {
+  from { transform: perspective(1000px) rotateY(0deg) translateX(0);   opacity: 1; }
+  to   { transform: perspective(1000px) rotateY(90deg) translateX(8%);  opacity: 0; }
+}
+@keyframes platformRotateInRight {
+  from { transform: perspective(1000px) rotateY(90deg) translateX(8%);  opacity: 0; }
+  to   { transform: perspective(1000px) rotateY(0deg) translateX(0);    opacity: 1; }
+}
+@keyframes platformRotateInLeft {
+  from { transform: perspective(1000px) rotateY(-90deg) translateX(-8%); opacity: 0; }
+  to   { transform: perspective(1000px) rotateY(0deg) translateX(0);     opacity: 1; }
+}
