@@ -15,6 +15,7 @@ const slides = [
     ellipse: "/images/platform-ellipse-1.svg",
     imgW: "clamp(180px, 23.65vw, 454px)",
     imgH: "clamp(150px, 22vw, 422px)",
+    imgOffsetX: "0vw",
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const slides = [
     ellipse: "/images/platform-ellipse-2.svg",
     imgW: "clamp(150px, 19.4vw, 372px)",
     imgH: "clamp(150px, 19.3vw, 370px)",
+    imgOffsetX: "0vw",
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ const slides = [
     ellipse: "/images/platform-ellipse-2.svg",
     imgW: "clamp(180px, 25.3vw, 486px)",
     imgH: "clamp(150px, 19.3vw, 370px)",
+    imgOffsetX: "3vw",
   },
 ];
 
@@ -187,7 +190,7 @@ export default function PlatformSection() {
           className="absolute overflow-hidden"
           style={{
             top: "19.5%",
-            left: "50%",
+            left: `calc(50% + ${current.imgOffsetX})`,
             transform: "translateX(-50%)",
             width: current.imgW,
             height: current.imgH,

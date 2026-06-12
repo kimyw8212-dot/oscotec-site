@@ -45,7 +45,7 @@ export default function HeroSection() {
           {navItems.map((item) => (
             <li key={item}>
               <Link
-                href={`#${item.toLowerCase().replace("&", "")}`}
+                href={item === "About" ? "/about" : `#${item.toLowerCase().replace("&", "")}`}
                 className="text-white font-medium leading-none whitespace-nowrap hover:opacity-70 transition-opacity duration-200"
                 style={{ fontSize: "clamp(14px, 1.25vw, 24px)" }}
               >

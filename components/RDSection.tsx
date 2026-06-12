@@ -19,7 +19,10 @@ export default function RDSection() {
       className="snap-section relative w-full overflow-hidden bg-black"
       style={{ height: "100vh" }}
     >
-      {/* ── 단일 파노라마 배경 ── */}
+      {/* ── 블랙 베이스 레이어 ── */}
+      <div className="absolute inset-0 bg-black" />
+
+      {/* ── 단일 파노라마 배경 (어둡게) ── */}
       <div
         className="absolute inset-0"
         style={{
@@ -27,6 +30,7 @@ export default function RDSection() {
           backgroundSize: "cover",
           backgroundPosition: "center center",
           backgroundRepeat: "no-repeat",
+          opacity: 0.6,
         }}
       />
 

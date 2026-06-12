@@ -29,6 +29,9 @@ html, body {
 /* snap-section: JS 타겟 식별용 */
 .snap-section {}
 
+/* sci-wrapper: 03.SCIENTIFIC APPROACH 스크롤 스냅 위치 계산용 */
+.sci-wrapper {}
+
 /* ─── Scroll reveal ─── */
 [data-reveal] { will-change: opacity, transform; }
 
@@ -57,6 +60,12 @@ html, body {
 [data-reveal].revealed {
   opacity: 1;
   transform: none;
+}
+
+/* Future Message Section — 이미지가 오른쪽으로 끊김 없이 흐르는 무한 마퀴 */
+@keyframes futureMarqueeRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0%); }
 }
 
 /* Platform Section — 3D 회전 */

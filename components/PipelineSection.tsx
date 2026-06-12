@@ -11,6 +11,7 @@ const tabs = [
     name: "Kinase Inhibitor",
     image: "/images/02 PELINE SECTIONKinase Inhibitor img.png",
     arc: "/images/pipeline-arc-1.svg",
+    arcMask: "/images/pipeline-arc-1-mask.svg",
     description: (
       <>
         암세포의 특정 단백질을 정밀하게 표적하여
@@ -18,6 +19,7 @@ const tabs = [
         효과적인 항암 치료제를 개발합니다.
       </>
     ),
+    imgPos: { left: "11.6%", top: "33.1%" },
     imgStyle: { width: "clamp(160px, 20.1vw, 386px)", height: "clamp(160px, 20.6vw, 395px)", borderRadius: "30px" },
   },
   {
@@ -26,6 +28,7 @@ const tabs = [
     name: "Target Discovery",
     image: "/images/02 PELINE SECTIONTarget Discovery img.png",
     arc: "/images/pipeline-arc-2.svg",
+    arcMask: "/images/pipeline-arc-2-mask.svg",
     description: (
       <>
         질병의 원인을 분석하고
@@ -33,7 +36,8 @@ const tabs = [
         새로운 치료 타겟을 발굴하는 단계입니다.
       </>
     ),
-    imgStyle: { width: "clamp(180px, 23.6vw, 454px)", height: "clamp(160px, 20.6vw, 395px)", borderRadius: "4px" },
+    imgPos: { left: "9.5%", top: "31.1%" },
+    imgStyle: { width: "clamp(170px, 21vw, 404px)", height: "clamp(150px, 18.3vw, 351px)", borderRadius: "4px" },
   },
   {
     id: 3,
@@ -41,6 +45,7 @@ const tabs = [
     name: "Drug Development",
     image: "/images/02 PELINE SECTION Drug Development img.png",
     arc: "/images/pipeline-arc-3.svg",
+    arcMask: "/images/pipeline-arc-3-mask.svg",
     description: (
       <>
         발굴된 타겟을 기반으로
@@ -48,6 +53,7 @@ const tabs = [
         안전하고 효과적인 치료제를 개발합니다.
       </>
     ),
+    imgPos: { left: "11.8%", top: "32.3%" },
     imgStyle: { width: "clamp(150px, 18.8vw, 361px)", height: "clamp(145px, 18.5vw, 355px)", borderRadius: "4px" },
   },
 ];
@@ -104,22 +110,39 @@ export default function PipelineSection() {
         PIPELINE
       </h2>
 
-      {/* 아크 SVG 컨테이너 — 탭별 다른 모양 */}
+      {/* 아크 SVG 컨테이너 — 탭별 다른 모양 (유리 질감) */}
       <div
         className="absolute pointer-events-none"
         style={{ left: "4.9%", top: "27.7%", width: "90.3%", height: "63.5%" }}
       >
         {tabs.map((tab, idx) => (
-          <img
+          <div
             key={tab.id}
-            src={tab.arc}
-            alt=""
-            className="absolute inset-0 w-full h-full"
+            className="absolute inset-0"
             style={{
               transition: "opacity 0.4s ease",
               opacity: idx === active ? 1 : 0,
             }}
-          />
+          >
+            {/* 유리 질감 배경 — 아크 형태로 마스킹된 블러 패널 */}
+            <div
+              className="absolute inset-0"
+              style={{
+                backdropFilter: "blur(28px) saturate(140%)",
+                WebkitBackdropFilter: "blur(28px) saturate(140%)",
+                background:
+                  "linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 100%)",
+                WebkitMaskImage: `url(${tab.arcMask})`,
+                maskImage: `url(${tab.arcMask})`,
+                WebkitMaskSize: "100% 100%",
+                maskSize: "100% 100%",
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
+              }}
+            />
+            {/* 아크 외곽선 */}
+            <img src={tab.arc} alt="" className="absolute inset-0 w-full h-full" />
+          </div>
         ))}
       </div>
 
@@ -127,9 +150,9 @@ export default function PipelineSection() {
       <div
         className="absolute overflow-hidden"
         style={{
-          left: "11.6%",
-          top: "37%",
-          transition: "opacity 0.22s ease",
+          left: current.imgPos.left,
+          top: current.imgPos.top,
+          transition: "opacity 0.22s ease, left 0.22s ease, top 0.22s ease",
           opacity: fading ? 0 : 1,
           ...current.imgStyle,
         }}
@@ -176,7 +199,7 @@ export default function PipelineSection() {
                 cursor: "pointer",
                 top: TAB_POSITIONS[idx],
                 right: 0,
-                transform: "translateY(-50%)",
+                transform: "translateY(-15%)",
               }}
               onMouseEnter={() => switchTab(idx)}
               onClick={() => switchTab(idx)}
