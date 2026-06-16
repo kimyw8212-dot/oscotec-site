@@ -336,12 +336,13 @@ export default function AboutHeroSection() {
             alt="ONCOLOGY"
             className="absolute inset-0 w-full h-full object-cover"
           />
+          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.45)" }} />
 
           {/* 02.CORE RESEARCH AREAS - ONCOLOGY 콘텐츠 — 화면을 꽉 채운 뒤 자연스럽게 페이드인 */}
           <div ref={descRef} className="absolute inset-0">
             <p
               className="absolute m-0 text-white font-bold whitespace-nowrap"
-              style={{ left: "39.27vw", top: "67vh", fontSize: "10.42vw" }}
+              style={{ left: "5.36vw", top: "67vh", fontSize: "10.42vw" }}
             >
               ONCOLOGY
             </p>
@@ -351,6 +352,19 @@ export default function AboutHeroSection() {
             >
               <p className="m-0">{`혁신적인 암 치료제 연구를 통해 `}</p>
               <p className="m-0">복잡한 암 질환의 새로운 가능성을 탐구합니다.</p>
+            </div>
+            <div
+              className="absolute flex items-center justify-center text-white border border-white font-normal"
+              style={{
+                right: "6.82vw",
+                top: "50vh",
+                width: "8.59vw",
+                height: "5.19vh",
+                borderRadius: "999px",
+                fontSize: "1.67vw",
+              }}
+            >
+              VIEW
             </div>
           </div>
         </div>
@@ -362,9 +376,10 @@ export default function AboutHeroSection() {
             alt="TARGETD THERAPY"
             className="absolute inset-0 w-full h-full object-cover"
           />
+          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.45)" }} />
           <p
             className="absolute m-0 text-white font-bold whitespace-nowrap"
-            style={{ left: "8.23vw", top: "67vh", fontSize: "9.375vw" }}
+            style={{ left: "5.36vw", top: "67vh", fontSize: "9.375vw" }}
           >
             TARGETD THERAPY
           </p>
@@ -375,6 +390,19 @@ export default function AboutHeroSection() {
             <p className="m-0">{`표적 기반 치료 기술로 `}</p>
             <p className="m-0">치료 효율과 정확성을 향상시킵니다.</p>
           </div>
+          <div
+            className="absolute flex items-center justify-center text-white border border-white font-normal"
+            style={{
+              right: "6.82vw",
+              top: "50vh",
+              width: "8.59vw",
+              height: "5.19vh",
+              borderRadius: "999px",
+              fontSize: "1.67vw",
+            }}
+          >
+            VIEW
+          </div>
         </div>
 
         {/* ADC PLATTFORM 프레임 — TARGETD THERAPY 위로 스르륵 올라오며 덮음 */}
@@ -384,9 +412,10 @@ export default function AboutHeroSection() {
             alt="ADC PLATTFORM"
             className="absolute inset-0 w-full h-full object-cover"
           />
+          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.45)" }} />
           <p
             className="absolute m-0 text-white font-bold whitespace-nowrap"
-            style={{ left: "10.10vw", top: "67vh", fontSize: "10.42vw" }}
+            style={{ left: "5.36vw", top: "67vh", fontSize: "10.42vw" }}
           >
             ADC PLATTFORM
           </p>
@@ -397,6 +426,19 @@ export default function AboutHeroSection() {
             <p className="m-0">{`항체 기반 전달 플랫폼으로 `}</p>
             <p className="m-0">선택적 치료 기술을 개발합니다.</p>
           </div>
+          <div
+            className="absolute flex items-center justify-center text-white border border-white font-normal"
+            style={{
+              right: "6.82vw",
+              top: "50vh",
+              width: "8.59vw",
+              height: "5.19vh",
+              borderRadius: "999px",
+              fontSize: "1.67vw",
+            }}
+          >
+            VIEW
+          </div>
         </div>
 
         {/* DRUG DISCOVERY 프레임 — ADC PLATTFORM 위로 스르륵 올라오며 덮음 */}
@@ -406,9 +448,10 @@ export default function AboutHeroSection() {
             alt="DRUG DISCOVERY"
             className="absolute inset-0 w-full h-full object-cover"
           />
+          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.45)" }} />
           <p
             className="absolute m-0 text-white font-bold whitespace-nowrap"
-            style={{ left: "6.51vw", top: "67vh", fontSize: "10.42vw" }}
+            style={{ left: "5.36vw", top: "67vh", fontSize: "10.42vw" }}
           >
             DRUG DISCOVERY
           </p>
@@ -418,6 +461,19 @@ export default function AboutHeroSection() {
           >
             <p className="m-0">{`신약 발굴과 연구 프로세스를 통해 `}</p>
             <p className="m-0">미래 치료제 개발을 가속화합니다.</p>
+          </div>
+          <div
+            className="absolute flex items-center justify-center text-white border border-white font-normal"
+            style={{
+              right: "6.82vw",
+              top: "50vh",
+              width: "8.59vw",
+              height: "5.19vh",
+              borderRadius: "999px",
+              fontSize: "1.67vw",
+            }}
+          >
+            VIEW
           </div>
         </div>
 
@@ -429,19 +485,6 @@ export default function AboutHeroSection() {
           >
             CORE RESEARCH AREAS
           </p>
-          <div
-            className="absolute flex items-center justify-center text-white border border-white font-normal"
-            style={{
-              left: "84.58vw",
-              top: "50vh",
-              width: "8.59vw",
-              height: "5.19vh",
-              borderRadius: "999px",
-              fontSize: "1.67vw",
-            }}
-          >
-            VIEW
-          </div>
         </div>
       </div>
     </div>
