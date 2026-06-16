@@ -24,3 +24,5 @@ yarn-error.log*
 rd_figma_screenshot.png
 figma_current.png
 news_screenshot.png
+
+.vercel
